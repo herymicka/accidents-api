@@ -7,6 +7,6 @@ COPY . .
 RUN pip install --no-cache-dir uv
 RUN uv sync
 
-EXPOSE 3000
+EXPOSE 10000
 
-CMD ["uv", "run", "bentoml", "serve", "src.service:RFClassifierService", "--port", "3000"]
+CMD ["sh", "-c", "uv run python src/models/train_model.py && uv run bentoml serve src.service:RFClassifierService --port ${PORT:-10000}"]
