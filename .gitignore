@@ -93,3 +93,5 @@ target/
 *.joblib*.joblib
 __pycache__/
 .venv/
+*.joblib
+*.joblib
